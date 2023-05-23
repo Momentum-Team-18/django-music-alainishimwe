@@ -1,8 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Album
 from .forms import AlbumForm
-from django.shortcuts import redirect
+# from django.shortcuts import redirect
 
 # Create your views here.
 def album_list(request):
@@ -35,4 +35,12 @@ def album_edit(request,pk):
     else:
         form = AlbumForm(instance=album)
     return render(request, 'albums/album_edit.html',{'form': form})
+
+def album_delete(request,pk):
+    album = get_object_or_404(Album, pk=pk)
+    album.delete()
+    return redirect('album_list')
+
+
+    
 

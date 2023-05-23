@@ -1,5 +1,8 @@
-h2,
+h1 {
+    padding: 70px;
+    color: brown;
+}
+
 h4 {
-    color: aquamarine;
-    padding-left: 15px;
+    font-family: cursive;
 }
