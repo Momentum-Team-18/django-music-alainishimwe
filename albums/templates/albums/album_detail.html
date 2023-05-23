@@ -1,0 +1,14 @@
+{% extends 'albums/base.html' %}
+
+{% block content %}
+        
+        <article>
+            <a class="btn btn-secondary" href="{% url 'album_edit' pk=album.pk%}">
+                {% include './icons/pencil-fill.svg'%}
+            </a>
+            <h2>{{album.title}}</h2>
+            <h4>{{album.artist}}</h4>
+
+        </article>
+        
+{% endblock %}
