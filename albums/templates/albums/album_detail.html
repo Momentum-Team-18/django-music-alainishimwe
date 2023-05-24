@@ -1,0 +1,23 @@
+{% extends 'albums/base.html' %}
+
+{% block content %}
+        
+        <article>
+            
+            <div class="box">
+                <h4>{{album.title}}</h4>
+                <p>by {{album.artist}}</p>
+
+            </div>
+
+            <a href="{% url 'album_edit' pk=album.pk%}">
+                Edit this album here {% include './icons/pencil-fill.svg'%}
+            </a>
+            <a  href="{% url 'album_delete' pk=album.pk%}" onclick="return confirm('Are you sure?')">
+                delete this album here {% include './icons/pencil-fill.svg'%}
+            </a>
+            
+
+        </article>
+        
+{% endblock %}
