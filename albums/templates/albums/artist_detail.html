@@ -1,0 +1,8 @@
+{% extends 'albums/base.html'%}
+
+{% block content%}
+    {% for album in albums%}
+    <p> {{album.title}}</p>
+    {%endfor%}
+
+{%endblock%}
